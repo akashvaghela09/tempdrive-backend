@@ -23,7 +23,9 @@ const folderSchema = new mongoose.Schema(
     {
         folderName: {type: String},
         links: {type: Array},
-        folderSize: {type: Number}
+        folderSize: {type: Number},
+        timestamp: {type: Number},
+        type: {type: String}
     }, 
     { versionKey: false }
 )
@@ -56,7 +58,9 @@ router.post("/", async (req, res) => {
         const newFolderBody = {
             "folderName": req.body.folderName,
             "links": req.body.links,
-            "folderSize": req.body.folderSize
+            "folderSize": req.body.folderSize,
+            "timestamp": req.body.timestamp,
+            "type": req.body.type
         }
         const newFolder = FolderModal.create(newFolderBody)
         return res.status(200).json({data: "Folder added successfully"})
