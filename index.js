@@ -4,6 +4,7 @@ const router = express.Router()
 const mongoose = require("mongoose");
 require("dotenv").config();
 const PORT = 2244
+const cors = require('cors');
 
 app.use(express.json())
 app.use(cors());
