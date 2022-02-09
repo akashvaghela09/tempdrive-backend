@@ -25,7 +25,6 @@ const connect = async () => {
     })
 }
 
-
 // Folder Schema
 const folderSchema = new mongoose.Schema(
     {
